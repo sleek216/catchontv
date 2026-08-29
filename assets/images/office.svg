@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#bgGrad)"/>
+  <circle cx="400" cy="200" r="180" fill="#6366f1" opacity="0.1"/>
+  <!-- Server Rack / Screens -->
+  <rect x="150" y="80" width="500" height="300" rx="12" fill="#1e293b" stroke="#334155" stroke-width="3"/>
+  <rect x="170" y="100" width="460" height="260" rx="8" fill="url(#screenGrad)" opacity="0.85"/>
+  <polygon points="380,200 440,230 380,260" fill="#ffffff"/>
+  <circle cx="400" cy="230" r="45" fill="none" stroke="#ffffff" stroke-width="4"/>
+  <text x="400" y="320" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">CatchON TV Global Streaming Network</text>
+  <!-- Floor Base -->
+  <rect x="360" y="380" width="80" height="40" fill="#334155"/>
+  <rect x="300" y="420" width="200" height="15" rx="7" fill="#475569"/>
+</svg>

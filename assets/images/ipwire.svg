@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <rect width="200" height="60" rx="8" fill="#0A192F"/>
+  <circle cx="35" cy="30" r="18" fill="#0070F3"/>
+  <path d="M26 30h18M35 21v18M29 24l12 12M41 24L29 36" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <text x="65" y="31" font-family="'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" letter-spacing="0.5">IPTV WIRE</text>
+  <text x="65" y="46" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#00DFD8">EDITOR'S CHOICE</text>
+</svg>

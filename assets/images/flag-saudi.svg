@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <circle cx="60" cy="60" r="56" fill="#006C35"/>
+  <rect x="25" y="70" width="70" height="6" rx="3" fill="#ffffff"/>
+  <polygon points="90,68 100,73 90,78" fill="#ffffff"/>
+  <text x="60" y="55" font-family="'Amiri', Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">العربية</text>
+  <circle cx="60" cy="60" r="56" fill="none" stroke="#e2e8f0" stroke-width="3"/>
+</svg>
