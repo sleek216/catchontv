@@ -4079,54 +4079,104 @@ $('#paginateBy').on('change', function(){
         
         
         <div class="dt-collection-filter" id="dt-collection-filter">   
-            <!-- Package Categories Filter (Clean Modern Pill Design) -->
-            <div class="js-filter package-category-filter" style="margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+            <!-- Package Categories Filter (Exact Theme Fonts & Clean No-Wrap Count) -->
+            <div class="js-filter package-category-filter" style="margin-bottom: 25px; border-bottom: 1px solid #e5e7eb; padding-bottom: 20px;">
                 <div class="mobile-facets__summary" style="margin-bottom: 14px;">
-                    <h5 class="sidebar_title" style="margin: 0; font-weight: 700; font-size: 15px; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">Categories</h5> 
+                    <h5 class="sidebar_title" style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 16px; color: #111827;">Categories</h5> 
                 </div>
                 <div class="sidebar-body">
-                    <div class="category-menu-list">
-                        <a href="javascript:void(0)" class="cat-pill-btn active" data-val="all">
-                            <span class="cat-name">All Packages</span>
-                            <span class="cat-num">52</span>
-                        </a>
-                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="top-selling">
-                            <span class="cat-name">🔥 Top Selling</span>
-                            <span class="cat-num">3</span>
-                        </a>
-                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="free-trial">
-                            <span class="cat-name">Free Trial 36 Hours</span>
-                            <span class="cat-num">1</span>
-                        </a>
-                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="one-month">
-                            <span class="cat-name">One Month Plans</span>
-                            <span class="cat-num">5</span>
-                        </a>
-                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="three-month">
-                            <span class="cat-name">Three Month Plans</span>
-                            <span class="cat-num">5</span>
-                        </a>
-                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="six-month">
-                            <span class="cat-name">Six Month Plans</span>
-                            <span class="cat-num">5</span>
-                        </a>
-                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="annual">
-                            <span class="cat-name">Annual Plans</span>
-                            <span class="cat-num">5</span>
-                        </a>
-                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="lifetime">
-                            <span class="cat-name">Lifetime Plans</span>
-                            <span class="cat-num">5</span>
-                        </a>
-                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="renew">
-                            <span class="cat-name">Renew Subscription</span>
-                            <span class="cat-num">20</span>
-                        </a>
-                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="reseller">
-                            <span class="cat-name">Become a Reseller</span>
-                            <span class="cat-num">4</span>
-                        </a>
-                    </div>
+                    <ul class="categories-list filter-package-tabs" style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 12px;">
+                            <div class="filter-custom-control" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="pkg_category" value="all" id="cat-all" checked style="accent-color: #e7422f; width: 16px; height: 16px; margin-top: 3px; cursor: pointer; flex-shrink: 0;">
+                                <label for="cat-all" class="category-filter-item active" style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #e7422f; font-weight: 700; line-height: 1.45; display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin: 0;">
+                                    <span class="cat-label-text" style="flex: 1; padding-right: 6px;">All Packages</span>
+                                    <span class="cat-label-count" style="color: #6b7280; font-weight: 500; font-size: 13px; white-space: nowrap; flex-shrink: 0;">(52)</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <div class="filter-custom-control" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="pkg_category" value="top-selling" id="cat-top-selling"  style="accent-color: #e7422f; width: 16px; height: 16px; margin-top: 3px; cursor: pointer; flex-shrink: 0;">
+                                <label for="cat-top-selling" class="category-filter-item " style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #222222; font-weight: 500; line-height: 1.45; display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin: 0;">
+                                    <span class="cat-label-text" style="flex: 1; padding-right: 6px;">🔥 Top Selling Packages</span>
+                                    <span class="cat-label-count" style="color: #6b7280; font-weight: 500; font-size: 13px; white-space: nowrap; flex-shrink: 0;">(3)</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <div class="filter-custom-control" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="pkg_category" value="free-trial" id="cat-free-trial"  style="accent-color: #e7422f; width: 16px; height: 16px; margin-top: 3px; cursor: pointer; flex-shrink: 0;">
+                                <label for="cat-free-trial" class="category-filter-item " style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #222222; font-weight: 500; line-height: 1.45; display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin: 0;">
+                                    <span class="cat-label-text" style="flex: 1; padding-right: 6px;">Free Trial 36 Hours</span>
+                                    <span class="cat-label-count" style="color: #6b7280; font-weight: 500; font-size: 13px; white-space: nowrap; flex-shrink: 0;">(1)</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <div class="filter-custom-control" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="pkg_category" value="one-month" id="cat-one-month"  style="accent-color: #e7422f; width: 16px; height: 16px; margin-top: 3px; cursor: pointer; flex-shrink: 0;">
+                                <label for="cat-one-month" class="category-filter-item " style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #222222; font-weight: 500; line-height: 1.45; display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin: 0;">
+                                    <span class="cat-label-text" style="flex: 1; padding-right: 6px;">One Month Subscription Plans</span>
+                                    <span class="cat-label-count" style="color: #6b7280; font-weight: 500; font-size: 13px; white-space: nowrap; flex-shrink: 0;">(5)</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <div class="filter-custom-control" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="pkg_category" value="three-month" id="cat-three-month"  style="accent-color: #e7422f; width: 16px; height: 16px; margin-top: 3px; cursor: pointer; flex-shrink: 0;">
+                                <label for="cat-three-month" class="category-filter-item " style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #222222; font-weight: 500; line-height: 1.45; display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin: 0;">
+                                    <span class="cat-label-text" style="flex: 1; padding-right: 6px;">Three Month Subscription Plans</span>
+                                    <span class="cat-label-count" style="color: #6b7280; font-weight: 500; font-size: 13px; white-space: nowrap; flex-shrink: 0;">(5)</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <div class="filter-custom-control" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="pkg_category" value="six-month" id="cat-six-month"  style="accent-color: #e7422f; width: 16px; height: 16px; margin-top: 3px; cursor: pointer; flex-shrink: 0;">
+                                <label for="cat-six-month" class="category-filter-item " style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #222222; font-weight: 500; line-height: 1.45; display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin: 0;">
+                                    <span class="cat-label-text" style="flex: 1; padding-right: 6px;">Six Month Subscription Plans</span>
+                                    <span class="cat-label-count" style="color: #6b7280; font-weight: 500; font-size: 13px; white-space: nowrap; flex-shrink: 0;">(5)</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <div class="filter-custom-control" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="pkg_category" value="annual" id="cat-annual"  style="accent-color: #e7422f; width: 16px; height: 16px; margin-top: 3px; cursor: pointer; flex-shrink: 0;">
+                                <label for="cat-annual" class="category-filter-item " style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #222222; font-weight: 500; line-height: 1.45; display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin: 0;">
+                                    <span class="cat-label-text" style="flex: 1; padding-right: 6px;">Annual Subscription Plans</span>
+                                    <span class="cat-label-count" style="color: #6b7280; font-weight: 500; font-size: 13px; white-space: nowrap; flex-shrink: 0;">(5)</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <div class="filter-custom-control" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="pkg_category" value="lifetime" id="cat-lifetime"  style="accent-color: #e7422f; width: 16px; height: 16px; margin-top: 3px; cursor: pointer; flex-shrink: 0;">
+                                <label for="cat-lifetime" class="category-filter-item " style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #222222; font-weight: 500; line-height: 1.45; display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin: 0;">
+                                    <span class="cat-label-text" style="flex: 1; padding-right: 6px;">Lifetime Subscription Plans</span>
+                                    <span class="cat-label-count" style="color: #6b7280; font-weight: 500; font-size: 13px; white-space: nowrap; flex-shrink: 0;">(5)</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <div class="filter-custom-control" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="pkg_category" value="renew" id="cat-renew"  style="accent-color: #e7422f; width: 16px; height: 16px; margin-top: 3px; cursor: pointer; flex-shrink: 0;">
+                                <label for="cat-renew" class="category-filter-item " style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #222222; font-weight: 500; line-height: 1.45; display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin: 0;">
+                                    <span class="cat-label-text" style="flex: 1; padding-right: 6px;">Renew Your IPTV Subscription</span>
+                                    <span class="cat-label-count" style="color: #6b7280; font-weight: 500; font-size: 13px; white-space: nowrap; flex-shrink: 0;">(20)</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <div class="filter-custom-control" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="pkg_category" value="reseller" id="cat-reseller"  style="accent-color: #e7422f; width: 16px; height: 16px; margin-top: 3px; cursor: pointer; flex-shrink: 0;">
+                                <label for="cat-reseller" class="category-filter-item " style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #222222; font-weight: 500; line-height: 1.45; display: flex; justify-content: space-between; align-items: baseline; width: 100%; margin: 0;">
+                                    <span class="cat-label-text" style="flex: 1; padding-right: 6px;">Become a Reseller</span>
+                                    <span class="cat-label-count" style="color: #6b7280; font-weight: 500; font-size: 13px; white-space: nowrap; flex-shrink: 0;">(4)</span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
             
@@ -5118,89 +5168,31 @@ $('#paginateBy').on('change', function(){
 
 
 
-<style>
-.category-menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: 100%;
-}
-.cat-pill-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 12px;
-  border-radius: 6px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  color: #334155;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  line-height: 1.3;
-}
-.cat-pill-btn:hover {
-  background: #f8fafc;
-  color: #e7422f !important;
-  border-color: #cbd5e1;
-}
-.cat-pill-btn.active {
-  background: #e7422f !important;
-  color: #ffffff !important;
-  border-color: #e7422f !important;
-  font-weight: 700;
-  box-shadow: 0 4px 6px -1px rgba(231, 66, 47, 0.2);
-}
-.cat-pill-btn .cat-name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-right: 8px;
-}
-.cat-pill-btn .cat-num {
-  background: #f1f5f9;
-  color: #64748b;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 10px;
-  flex-shrink: 0;
-}
-.cat-pill-btn.active .cat-num {
-  background: rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-}
 
-@media (min-width: 992px) {
-  #collection-template-query.left-sidebar {
-    display: flex;
-    gap: 30px;
-  }
-  #collection-template-query.left-sidebar .facets {
-    width: 260px;
-    flex: 0 0 260px;
-  }
-  #collection-template-query.left-sidebar .collection-grid {
-    flex: 1;
-    min-width: 0;
-  }
-}
-</style>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const pillButtons = document.querySelectorAll('.cat-pill-btn');
+    const radios = document.querySelectorAll('input[name="pkg_category"]');
     const products = document.querySelectorAll('.product-collection .grid-item');
+    const labels = document.querySelectorAll('.category-filter-item');
 
-    pillButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const val = this.getAttribute('data-val');
+    radios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            const val = this.value;
+            
+            // Update active label font and color to match site
+            labels.forEach(lbl => {
+                lbl.style.color = '#222222';
+                lbl.style.fontWeight = '500';
+            });
+            const activeLabel = this.closest('.filter-custom-control').querySelector('.category-filter-item');
+            if (activeLabel) {
+                activeLabel.style.color = '#e7422f';
+                activeLabel.style.fontWeight = '700';
+            }
 
-            pillButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-
+            // Filter products in 3-column grid
             products.forEach(p => {
                 const cats = p.getAttribute('data-category') || 'all';
                 if (val === 'all' || cats.includes(val)) {
