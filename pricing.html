@@ -1732,7 +1732,7 @@ $('#paginateBy').on('change', function(){
 
 
 
-<li class=" grid-item product-grid-item  " id="product-8386084929814">
+<li class=" grid-item product-grid-item  " data-category="top-selling all" id="product-8386084929814">
   <div class="products">
     <div class="product-container">  
       
@@ -1844,7 +1844,7 @@ $('#paginateBy').on('change', function(){
 
 
 
-<li class=" grid-item product-grid-item  " id="product-8386093809942">
+<li class=" grid-item product-grid-item  " data-category="top-selling all" id="product-8386093809942">
   <div class="products">
     <div class="product-container">  
       
@@ -1956,7 +1956,7 @@ $('#paginateBy').on('change', function(){
 
 
 
-<li class=" grid-item product-grid-item  " id="product-8386091581718">
+<li class=" grid-item product-grid-item  " data-category="top-selling all" id="product-8386091581718">
   <div class="products">
     <div class="product-container">  
       
@@ -2083,7 +2083,33 @@ $('#paginateBy').on('change', function(){
 
         
 
+        
         <div class="dt-collection-filter" id="dt-collection-filter">   
+            <!-- Package Categories Filter -->
+            <div class="js-filter package-category-filter" style="margin-bottom: 25px; border-bottom: 1px solid #e5e7eb; padding-bottom: 20px;">
+                <div class="mobile-facets__summary">
+                    <h5 class="sidebar_title" style="margin-bottom: 12px; font-weight: 700; color: #111827;">Categories</h5>
+                </div>
+                <div class="sidebar-body">
+                    <ul class="categories-list filter-package-tabs" style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;">
+                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 600; color: #e7422f; gap: 8px;">
+                                <input type="radio" name="pkg_category" value="all" checked style="accent-color: #e7422f; width: 16px; height: 16px;">
+                                <span>All Packages</span>
+                                <span class="badge-count" style="color: #6b7280; font-size: 13px; margin-left: auto;">(3)</span>
+                            </label>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 600; color: #4b5563; gap: 8px;">
+                                <input type="radio" name="pkg_category" value="top-selling" style="accent-color: #e7422f; width: 16px; height: 16px;">
+                                <span>🔥 Top Selling Packages</span>
+                                <span class="badge-count" style="color: #6b7280; font-size: 13px; margin-left: auto;">(3)</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+   
             <div class="js-filter" data-index="filter-1"> 
                 <div class="mobile-facets__summary">
                     <h5 class="sidebar_title">Availability</h5> 
@@ -3065,5 +3091,32 @@ $('#paginateBy').on('change', function(){
 </div><div id="shopify-block-6143736321357441667" class="shopify-block shopify-app-block">
 
 
-</div></body>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const radios = document.querySelectorAll('input[name="pkg_category"]');
+    const products = document.querySelectorAll('.product-collection .grid-item');
+
+    radios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            const val = this.value;
+            document.querySelectorAll('.category-filter-item').forEach(lbl => {
+                lbl.style.color = '#4b5563';
+            });
+            this.closest('.category-filter-item').style.color = '#e7422f';
+
+            products.forEach(p => {
+                const cats = p.getAttribute('data-category') || 'all';
+                if (val === 'all' || cats.includes(val)) {
+                    p.style.display = '';
+                } else {
+                    p.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
+
+</body>
 </html>
