@@ -463,118 +463,41 @@ for (var attr in meta) {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  
-<style id="custom-grid-button-alignment">
-/* Perfect Grid Button Alignment Across All Rows */
-.product-collection {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 25px !important;
-}
-@media (max-width: 991px) {
-    .product-collection {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-}
-@media (max-width: 575px) {
-    .product-collection {
-        grid-template-columns: 1fr !important;
-    }
-}
-
+  <style>
+/* Button horizontal alignment in row */
 .product-collection .grid-item {
-    height: 100% !important;
     display: flex !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
 }
-
-.product-collection .products {
+.product-collection .grid-item .products {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
     height: 100% !important;
-    background: #ffffff;
-    border-radius: 8px;
-    box-sizing: border-box;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-.product-collection .product-container {
-    flex-shrink: 0;
-}
-
-.product-collection .product-detail {
+.product-collection .grid-item .product-detail {
     display: flex !important;
     flex-direction: column !important;
     flex: 1 1 auto !important;
-    justify-content: flex-start !important;
-    padding: 15px 12px 18px !important;
-    box-sizing: border-box;
+    justify-content: space-between !important;
 }
-
-.product-collection .product-vendor {
-    margin-bottom: 6px !important;
-}
-
-/* Ensure all titles have uniform minimum height so buttons line up */
 .product-collection .grid-link__title {
-    min-height: 56px !important;
+    min-height: 54px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    text-align: center !important;
-    margin: 0 0 10px 0 !important;
-    line-height: 1.3 !important;
+    margin-bottom: 8px !important;
 }
-
-.product-collection .grid-link__title a {
-    font-size: 15px !important;
-    font-weight: 700 !important;
-    color: #111827 !important;
-}
-
-.product-collection .grid-link__meta {
-    margin-bottom: 12px !important;
-}
-
-/* Push Order Now button wrapper to the absolute bottom of each card */
-.product-collection .product-order-btn-wrap {
+.product-collection .product-detail > div:last-child {
     margin-top: auto !important;
     padding-top: 10px !important;
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
 }
-
-.product-collection .product-order-btn-wrap .dt-sc-btn {
-    padding: 9px 22px !important;
+.product-collection .product-detail .dt-sc-btn {
+    padding: 8px 22px !important;
     font-size: 13.5px !important;
-    border-radius: 6px !important;
     font-weight: 700 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 7px !important;
-    background: #e7422f !important;
-    color: #ffffff !important;
-    transition: background-color 0.2s ease, transform 0.1s ease !important;
-    text-decoration: none !important;
-}
-
-.product-collection .product-order-btn-wrap .dt-sc-btn:hover {
-    background: #c93524 !important;
-    transform: translateY(-1px);
-}
-
-/* Professional toolbar search input focus */
-#pkg-search-input:focus {
-    border-color: #e7422f !important;
-    box-shadow: 0 0 0 3px rgba(231, 66, 47, 0.15) !important;
+    border-radius: 4px !important;
 }
 </style>
-
 </head>
   <body id="products" class=" body-boxed template-collection  others " style="">
     
@@ -1716,33 +1639,33 @@ for (var attr in meta) {
       <div class="collection-grid product-grid-height-template--19498204332310__main">
         
         
-        <div class="collection-header professional-toolbar" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; padding: 14px 18px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 25px;">
+        <div class="collection-header" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 12px 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-bottom: 25px;">            
           <!-- Left: Professional Live Search Bar -->
-          <div class="toolbar-search" style="flex: 1; min-width: 220px; max-width: 400px; position: relative;">
-            <i class="fa fa-search" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 14px;"></i>
-            <input type="text" id="pkg-search-input" placeholder="Search packages (e.g. 1 Month, 2 Devices, Trial...)" 
-                   style="width: 100%; padding: 9px 34px 9px 38px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 13.5px; background: #ffffff; color: #1e293b; outline: none; transition: border-color 0.2s;">
-            <span id="search-clear-btn" style="display: none; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #94a3b8; font-size: 16px; font-weight: bold;">&times;</span>
+          <div style="flex: 1; min-width: 220px; max-width: 380px; position: relative;">
+            <i class="fa fa-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 13px;"></i>
+            <input type="text" id="pkg-search-input" placeholder="Search packages (e.g. 1 Month, 2 Devices)..." 
+                   style="width: 100%; padding: 8px 30px 8px 34px; border: 1px solid #cbd5e1; border-radius: 5px; font-family: 'Montserrat', sans-serif; font-size: 13px; background: #ffffff; color: #1e293b; outline: none; box-sizing: border-box;">
+            <span id="search-clear-btn" style="display: none; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #94a3b8; font-size: 15px; font-weight: bold;">&times;</span>
           </div>
 
-          <!-- Right: View switchers & Sort By Dropdown -->
-          <div class="toolbar-actions" style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
-            <div class="collection-view" data-view style="margin: 0; display: flex; gap: 5px;">
-              <a title="Grid view" class="change-mode active" data-view="grid" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 4px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer;">
-                <svg viewBox="0 0 512 512" style="width: 15px; height: 15px; fill: #e7422f;" xmlns="http://www.w3.org/2000/svg">
+          <!-- Right: View switchers & Sort Dropdown -->
+          <div style="display: flex; align-items: center; gap: 14px; margin-left: auto;">
+            <div class="collection-view" data-view style="margin: 0; display: flex; gap: 4px;">
+              <a title="Grid view" class="change-mode active" data-view="grid" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 4px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer;">
+                <svg viewBox="0 0 512 512" style="width: 14px; height: 14px; fill: #e7422f;" xmlns="http://www.w3.org/2000/svg">
                   <path d="m0 0h138.5v138.5h-138.5zm0 0"/><path d="m373.5 0h138.5v138.5h-138.5zm0 0"/><path d="m186.75 0h138.5v138.5h-138.5zm0 0"/><path d="m0 186.75h138.5v138.5h-138.5zm0 0"/><path d="m373.5 186.75h138.5v138.5h-138.5zm0 0"/><path d="m186.75 186.75h138.5v138.5h-138.5zm0 0"/><path d="m0 373.5h138.5v138.5h-138.5zm0 0"/><path d="m373.5 373.5h138.5v138.5h-138.5zm0 0"/><path d="m186.75 373.5h138.5v138.5h-138.5zm0 0"/>
                 </svg> 
               </a>
-              <a title="List view" class="change-mode" data-view="list" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 4px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 15px; height: 15px; fill: #64748b;">
+              <a title="List view" class="change-mode" data-view="list" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 4px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 14px; height: 14px; fill: #64748b;">
                   <path d="M0-0.3h113.3v142.5H0V-0.3z"/><path d="M149.3-0.3H512v142.5H149.3V-0.3z"/><path d="M0,184.6h113.3v142.5H0V184.6z"/><path d="M149.3,184.6H512v142.5H149.3V184.6z"/><path d="M0,369.5h113.3V512H0V369.5z"/><path d="M149.3,369.5H512V512H149.3V369.5z"/>
                 </svg>
               </a>
             </div>
 
-            <div class="toolbar-sort" style="display: flex; align-items: center; gap: 8px;">
-              <label for="SortBy" style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 13.5px; font-weight: 600; color: #475569; white-space: nowrap;">Sort by:</label>
-              <select name="SortBy" id="SortBy" style="padding: 7px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; background: #ffffff; color: #1e293b; cursor: pointer; outline: none;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <label for="SortBy" style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: #475569; white-space: nowrap;">Sort by:</label>
+              <select name="SortBy" id="SortBy" style="padding: 6px 10px; border: 1px solid #cbd5e1; border-radius: 5px; font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 600; background: #ffffff; color: #1e293b; cursor: pointer; outline: none;">
                 <option value="featured">Featured</option>
                 <option value="price-low-high">Price: Low to High</option>
                 <option value="price-high-low">Price: High to Low</option>
@@ -1751,8 +1674,6 @@ for (var attr in meta) {
               </select>
             </div>
           </div>
-        </div>
-                      
         </div>
         
         <div class="dT_VProdWrapper" id="dT_collectionGrid"> 
@@ -1792,7 +1713,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -1835,7 +1757,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -1878,7 +1801,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -1921,7 +1845,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -1964,7 +1889,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2007,7 +1933,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2050,7 +1977,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2093,7 +2021,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2136,7 +2065,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2179,7 +2109,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2222,7 +2153,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2265,7 +2197,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2308,7 +2241,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2351,7 +2285,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2394,7 +2329,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2437,7 +2373,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2480,7 +2417,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2523,7 +2461,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2566,7 +2505,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2609,7 +2549,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2652,7 +2593,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2695,7 +2637,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2738,7 +2681,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2781,7 +2725,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2824,7 +2769,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2867,7 +2813,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2910,7 +2857,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2953,7 +2901,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2996,7 +2945,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3039,7 +2989,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3082,7 +3033,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3125,7 +3077,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3168,7 +3121,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3211,7 +3165,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3254,7 +3209,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3297,7 +3253,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3340,7 +3297,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3383,7 +3341,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3426,7 +3385,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3469,7 +3429,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3512,7 +3473,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3555,7 +3517,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3598,7 +3561,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3641,7 +3605,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3684,7 +3649,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3727,7 +3693,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3770,7 +3737,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3813,7 +3781,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3856,7 +3825,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3899,7 +3869,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3942,7 +3913,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3985,7 +3957,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -4028,7 +4001,8 @@ for (var attr in meta) {
             </div>
           </div>
         </div>
-        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div style="margin-top: 12px;">
+          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -4057,7 +4031,28 @@ for (var attr in meta) {
   
   
   <collection-filters-form class="facets small-hide">
-    <form id="CollectionFiltersForm" class="facets__form" onsubmit="applyFilters(); return false;">
+    <form id="CollectionFiltersForm" class="facets__form" onsubmit="
+    // Search input live filtering
+    const searchInput = document.getElementById('pkg-search-input');
+    const searchClearBtn = document.getElementById('search-clear-btn');
+    if (searchInput) {
+        searchInput.addEventListener('input', applyFilters);
+    }
+    if (searchClearBtn) {
+        searchClearBtn.addEventListener('click', function() {
+            if (searchInput) searchInput.value = '';
+            applyFilters();
+        });
+    }
+
+    // Sort By handler
+    const sortSelect = document.getElementById('SortBy');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', handleSort);
+    }
+    
+    applyFilters();
+ return false;">
         
 
         
@@ -5129,9 +5124,6 @@ for (var attr in meta) {
 
 
 
-
-
-
 <script>
 let originalProductsOrder = [];
 
@@ -5178,6 +5170,10 @@ function handleSort() {
     const grid = document.querySelector('.product-collection');
     if (!grid) return;
     
+    if (originalProductsOrder.length === 0) {
+        originalProductsOrder = Array.from(grid.querySelectorAll('.grid-item'));
+    }
+    
     const items = Array.from(grid.querySelectorAll('.grid-item'));
     
     if (sortVal === 'price-low-high') {
@@ -5185,24 +5181,11 @@ function handleSort() {
     } else if (sortVal === 'price-high-low') {
         items.sort((a, b) => parseFloat(b.getAttribute('data-price') || 0) - parseFloat(a.getAttribute('data-price') || 0));
     } else if (sortVal === 'title-az') {
-        items.sort((a, b) => {
-            const titleA = a.querySelector('.grid-link__title')?.innerText.trim() || '';
-            const titleB = b.querySelector('.grid-link__title')?.innerText.trim() || '';
-            return titleA.localeCompare(titleB);
-        });
+        items.sort((a, b) => (a.querySelector('.grid-link__title')?.innerText || '').trim().localeCompare((b.querySelector('.grid-link__title')?.innerText || '').trim()));
     } else if (sortVal === 'title-za') {
-        items.sort((a, b) => {
-            const titleA = a.querySelector('.grid-link__title')?.innerText.trim() || '';
-            const titleB = b.querySelector('.grid-link__title')?.innerText.trim() || '';
-            return titleB.localeCompare(titleA);
-        });
+        items.sort((a, b) => (b.querySelector('.grid-link__title')?.innerText || '').trim().localeCompare((a.querySelector('.grid-link__title')?.innerText || '').trim()));
     } else {
-        // Featured (Original Order)
-        items.sort((a, b) => {
-            const idxA = originalProductsOrder.indexOf(a);
-            const idxB = originalProductsOrder.indexOf(b);
-            return idxA - idxB;
-        });
+        items.sort((a, b) => originalProductsOrder.indexOf(a) - originalProductsOrder.indexOf(b));
     }
     
     items.forEach(item => grid.appendChild(item));
@@ -5213,40 +5196,8 @@ function clearPriceFilter() {
     const maxInput = document.querySelector('input[name="filter.v.price.lte"]');
     if (minInput) minInput.value = '';
     if (maxInput) maxInput.value = '';
-    applyFilters();
-}
-
-function clearAllFilters() {
-    clearPriceFilter();
-    const searchInput = document.getElementById('pkg-search-input');
-    if (searchInput) searchInput.value = '';
-    const allRadio = document.getElementById('cat-all');
-    if (allRadio) allRadio.checked = true;
-    const sortSelect = document.getElementById('SortBy');
-    if (sortSelect) {
-        sortSelect.value = 'featured';
-        handleSort();
-    }
-    applyFilters();
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    const grid = document.querySelector('.product-collection');
-    if (grid) {
-        originalProductsOrder = Array.from(grid.querySelectorAll('.grid-item'));
-    }
-
-    // 1. Listen to category radio changes
-    const radios = document.querySelectorAll('input[name="pkg_category"]');
-    radios.forEach(radio => radio.addEventListener('change', applyFilters));
-
-    // 2. Listen to price input changes
-    const minInput = document.querySelector('input[name="filter.v.price.gte"]');
-    const maxInput = document.querySelector('input[name="filter.v.price.lte"]');
-    if (minInput) minInput.addEventListener('input', applyFilters);
-    if (maxInput) maxInput.addEventListener('input', applyFilters);
-
-    // 3. Search Bar live typing & clear button
+    
+    // Search input live filtering
     const searchInput = document.getElementById('pkg-search-input');
     const searchClearBtn = document.getElementById('search-clear-btn');
     if (searchInput) {
@@ -5259,41 +5210,60 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 4. Sort dropdown change
+    // Sort By handler
     const sortSelect = document.getElementById('SortBy');
     if (sortSelect) {
         sortSelect.addEventListener('change', handleSort);
     }
+    
+    applyFilters();
 
-    // 5. Grid / List View Toggle
-    const viewButtons = document.querySelectorAll('.collection-view a[data-view]');
-    viewButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            viewButtons.forEach(b => {
-                b.classList.remove('active');
-                const svg = b.querySelector('svg');
-                if (svg) svg.style.fill = '#64748b';
-            });
-            this.classList.add('active');
-            const activeSvg = this.querySelector('svg');
-            if (activeSvg) activeSvg.style.fill = '#e7422f';
-            
-            const viewMode = this.getAttribute('data-view');
-            const coll = document.querySelector('.product-collection');
-            if (coll) {
-                if (viewMode === 'list') {
-                    coll.style.display = 'flex';
-                    coll.style.flexDirection = 'column';
-                } else {
-                    coll.style.display = 'grid';
-                    coll.style.flexDirection = '';
-                }
-            }
+}
+
+function clearAllFilters() {
+    clearPriceFilter();
+    const allRadio = document.getElementById('cat-all');
+    if (allRadio) {
+        allRadio.checked = true;
+    }
+    
+    // Search input live filtering
+    const searchInput = document.getElementById('pkg-search-input');
+    const searchClearBtn = document.getElementById('search-clear-btn');
+    if (searchInput) {
+        searchInput.addEventListener('input', applyFilters);
+    }
+    if (searchClearBtn) {
+        searchClearBtn.addEventListener('click', function() {
+            if (searchInput) searchInput.value = '';
+            applyFilters();
         });
+    }
+
+    // Sort By handler
+    const sortSelect = document.getElementById('SortBy');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', handleSort);
+    }
+    
+    applyFilters();
+
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Listen to category radio changes
+    const radios = document.querySelectorAll('input[name="pkg_category"]');
+    radios.forEach(radio => {
+        radio.addEventListener('change', applyFilters);
     });
 
-    // 6. Check URL parameters
+    // 2. Listen to price input keyup / changes
+    const minInput = document.querySelector('input[name="filter.v.price.gte"]');
+    const maxInput = document.querySelector('input[name="filter.v.price.lte"]');
+    if (minInput) minInput.addEventListener('input', applyFilters);
+    if (maxInput) maxInput.addEventListener('input', applyFilters);
+
+    // 3. Check URL parameters if user opened via direct link or after refresh
     const urlParams = new URLSearchParams(window.location.search);
     const catParam = urlParams.get('pkg_category');
     const minParam = urlParams.get('filter.v.price.gte');
@@ -5301,12 +5271,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (catParam) {
         const targetRadio = document.querySelector(`input[name="pkg_category"][value="${catParam}"]`);
-        if (targetRadio) targetRadio.checked = true;
+        if (targetRadio) {
+            targetRadio.checked = true;
+        }
     }
     if (minParam && minInput) minInput.value = minParam;
     if (maxParam && maxInput) maxInput.value = maxParam;
 
+    // Run initial filter check
+    
+    // Search input live filtering
+    const searchInput = document.getElementById('pkg-search-input');
+    const searchClearBtn = document.getElementById('search-clear-btn');
+    if (searchInput) {
+        searchInput.addEventListener('input', applyFilters);
+    }
+    if (searchClearBtn) {
+        searchClearBtn.addEventListener('click', function() {
+            if (searchInput) searchInput.value = '';
+            applyFilters();
+        });
+    }
+
+    // Sort By handler
+    const sortSelect = document.getElementById('SortBy');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', handleSort);
+    }
+    
     applyFilters();
+
 });
 </script>
 
