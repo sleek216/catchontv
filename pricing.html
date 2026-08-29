@@ -463,7 +463,119 @@ for (var attr in meta) {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  </head>
+  
+<style id="custom-grid-button-alignment">
+/* Perfect Grid Button Alignment Across All Rows */
+.product-collection {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 25px !important;
+}
+@media (max-width: 991px) {
+    .product-collection {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 575px) {
+    .product-collection {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.product-collection .grid-item {
+    height: 100% !important;
+    display: flex !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+.product-collection .products {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: #ffffff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-collection .product-container {
+    flex-shrink: 0;
+}
+
+.product-collection .product-detail {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    justify-content: flex-start !important;
+    padding: 15px 12px 18px !important;
+    box-sizing: border-box;
+}
+
+.product-collection .product-vendor {
+    margin-bottom: 6px !important;
+}
+
+/* Ensure all titles have uniform minimum height so buttons line up */
+.product-collection .grid-link__title {
+    min-height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 0 10px 0 !important;
+    line-height: 1.3 !important;
+}
+
+.product-collection .grid-link__title a {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+}
+
+.product-collection .grid-link__meta {
+    margin-bottom: 12px !important;
+}
+
+/* Push Order Now button wrapper to the absolute bottom of each card */
+.product-collection .product-order-btn-wrap {
+    margin-top: auto !important;
+    padding-top: 10px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.product-collection .product-order-btn-wrap .dt-sc-btn {
+    padding: 9px 22px !important;
+    font-size: 13.5px !important;
+    border-radius: 6px !important;
+    font-weight: 700 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    background: #e7422f !important;
+    color: #ffffff !important;
+    transition: background-color 0.2s ease, transform 0.1s ease !important;
+    text-decoration: none !important;
+}
+
+.product-collection .product-order-btn-wrap .dt-sc-btn:hover {
+    background: #c93524 !important;
+    transform: translateY(-1px);
+}
+
+/* Professional toolbar search input focus */
+#pkg-search-input:focus {
+    border-color: #e7422f !important;
+    box-shadow: 0 0 0 3px rgba(231, 66, 47, 0.15) !important;
+}
+</style>
+
+</head>
   <body id="products" class=" body-boxed template-collection  others " style="">
     
     <div class="mobile-menu" data-menu="dt-main-menu"></div>
@@ -1604,115 +1716,42 @@ for (var attr in meta) {
       <div class="collection-grid product-grid-height-template--19498204332310__main">
         
         
-        <div class="collection-header">            
-          
-          <div class="collection-view" data-view>
-  <a title="Grid view" class="change-mode active" data-view="grid">
-    <svg viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg">
-  <path d="m0 0h138.5v138.5h-138.5zm0 0"/>
-  <path d="m373.5 0h138.5v138.5h-138.5zm0 0"/>
-  <path d="m186.75 0h138.5v138.5h-138.5zm0 0"/>
-  <path d="m0 186.75h138.5v138.5h-138.5zm0 0"/>
-  <path d="m373.5 186.75h138.5v138.5h-138.5zm0 0"/>
-  <path d="m186.75 186.75h138.5v138.5h-138.5zm0 0"/>
-  <path d="m0 373.5h138.5v138.5h-138.5zm0 0"/>
-  <path d="m373.5 373.5h138.5v138.5h-138.5zm0 0"/>
-  <path d="m186.75 373.5h138.5v138.5h-138.5zm0 0"/>
-</svg> 
-  </a>
-  <a title="List view" class="change-mode" data-view="list">
-   <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"  xml:space="preserve">
-  <path d="M0-0.3h113.3v142.5H0V-0.3z"/>
-  <path d="M149.3-0.3H512v142.5H149.3V-0.3z"/>
-  <path d="M0,184.6h113.3v142.5H0V184.6z"/>
-  <path d="M149.3,184.6H512v142.5H149.3V184.6z"/>
-  <path d="M0,369.5h113.3V512H0V369.5z"/>
-  <path d="M149.3,369.5H512V512H149.3V369.5z"/>
-</svg>
- 
-  </a>
-</div>
+        <div class="collection-header professional-toolbar" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; padding: 14px 18px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 25px;">
+          <!-- Left: Professional Live Search Bar -->
+          <div class="toolbar-search" style="flex: 1; min-width: 220px; max-width: 400px; position: relative;">
+            <i class="fa fa-search" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 14px;"></i>
+            <input type="text" id="pkg-search-input" placeholder="Search packages (e.g. 1 Month, 2 Devices, Trial...)" 
+                   style="width: 100%; padding: 9px 34px 9px 38px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 13.5px; background: #ffffff; color: #1e293b; outline: none; transition: border-color 0.2s;">
+            <span id="search-clear-btn" style="display: none; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #94a3b8; font-size: 16px; font-weight: bold;">&times;</span>
+          </div>
 
-                      
-          
-          <div class="collection-items-per-page">
-<label for="paginateBy">Paginate by</label>
-<select name="paginateBy" id="paginateBy">
-  <option value="9">9</option>
-  
-  <option value="12">12</option>
-  
-  <option value="16">16</option>
-  
-  <option value="20">20</option>
-  
-  <option value="24">24</option>
-  
-  <option value="30">30</option>
-  
-  <option value="48">48</option>
-  
-</select>
-</div>
+          <!-- Right: View switchers & Sort By Dropdown -->
+          <div class="toolbar-actions" style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
+            <div class="collection-view" data-view style="margin: 0; display: flex; gap: 5px;">
+              <a title="Grid view" class="change-mode active" data-view="grid" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 4px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer;">
+                <svg viewBox="0 0 512 512" style="width: 15px; height: 15px; fill: #e7422f;" xmlns="http://www.w3.org/2000/svg">
+                  <path d="m0 0h138.5v138.5h-138.5zm0 0"/><path d="m373.5 0h138.5v138.5h-138.5zm0 0"/><path d="m186.75 0h138.5v138.5h-138.5zm0 0"/><path d="m0 186.75h138.5v138.5h-138.5zm0 0"/><path d="m373.5 186.75h138.5v138.5h-138.5zm0 0"/><path d="m186.75 186.75h138.5v138.5h-138.5zm0 0"/><path d="m0 373.5h138.5v138.5h-138.5zm0 0"/><path d="m373.5 373.5h138.5v138.5h-138.5zm0 0"/><path d="m186.75 373.5h138.5v138.5h-138.5zm0 0"/>
+                </svg> 
+              </a>
+              <a title="List view" class="change-mode" data-view="list" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 4px; border: 1px solid #cbd5e1; background: #ffffff; cursor: pointer;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 15px; height: 15px; fill: #64748b;">
+                  <path d="M0-0.3h113.3v142.5H0V-0.3z"/><path d="M149.3-0.3H512v142.5H149.3V-0.3z"/><path d="M0,184.6h113.3v142.5H0V184.6z"/><path d="M149.3,184.6H512v142.5H149.3V184.6z"/><path d="M0,369.5h113.3V512H0V369.5z"/><path d="M149.3,369.5H512V512H149.3V369.5z"/>
+                </svg>
+              </a>
+            </div>
 
-<script type="text/javascript">
-$('#paginateBy').on('change', function(){
-  var val = $(this).val();
-  $.ajax({
-    type: "POST",
-    url: '/cart.js',
-    data: {"attributes[pagination]": val}, 
-    success: function(d){
-      window.location.reload(); 
-    },
-    dataType: 'json'
-  });
-});
-</script>
-          
-          
-          <div class="sortby">
-  <label for="SortBy">Sort by </label>
-  <select name="SortBy" id="SortBy" class="dT_SortBy">
-    
-    <option value="manual" >Featured</option>
-    
-    <option value="best-selling" >Best selling</option>
-    
-    <option value="title-ascending" >Alphabetically, A-Z</option>
-    
-    <option value="title-descending" >Alphabetically, Z-A</option>
-    
-    <option value="price-ascending" >Price, low to high</option>
-    
-    <option value="price-descending" >Price, high to low</option>
-    
-    <option value="created-ascending" >Date, old to new</option>
-    
-    <option value="created-descending" >Date, new to old</option>
-    
-  </select>
-</div>
-
-<script>
-  // Save existing sort parameters
-//   Shopify.queryParams = {};
-//   if(location.search.length) {
-//     for(var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
-//       aKeyValue = aCouples[i].split('=');
-//       if (aKeyValue.length > 1) {
-//         Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
-//       }
-//     }
-//   }
-
-  // Add existing sort parameters to current URL
-//   document.querySelector('#SortBy').addEventListener('change', function(e) {
-//     var value = e.currentTarget.value;
-//     Shopify.queryParams.sort_by = value;
-//     location.search = new URLSearchParams(Shopify.queryParams).toString();
-//   });
-</script>
+            <div class="toolbar-sort" style="display: flex; align-items: center; gap: 8px;">
+              <label for="SortBy" style="margin: 0; font-family: 'Montserrat', sans-serif; font-size: 13.5px; font-weight: 600; color: #475569; white-space: nowrap;">Sort by:</label>
+              <select name="SortBy" id="SortBy" style="padding: 7px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; background: #ffffff; color: #1e293b; cursor: pointer; outline: none;">
+                <option value="featured">Featured</option>
+                <option value="price-low-high">Price: Low to High</option>
+                <option value="price-high-low">Price: High to Low</option>
+                <option value="title-az">Name: A to Z</option>
+                <option value="title-za">Name: Z to A</option>
+              </select>
+            </div>
+          </div>
+        </div>
                       
         </div>
         
@@ -1753,8 +1792,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -1797,8 +1835,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -1841,8 +1878,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -1885,8 +1921,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -1929,8 +1964,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -1973,8 +2007,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2017,8 +2050,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2061,8 +2093,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2105,8 +2136,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2149,8 +2179,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2193,8 +2222,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2237,8 +2265,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2281,8 +2308,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2325,8 +2351,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2369,8 +2394,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2413,8 +2437,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2457,8 +2480,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2501,8 +2523,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2545,8 +2566,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2589,8 +2609,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2633,8 +2652,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2677,8 +2695,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2721,8 +2738,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2765,8 +2781,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2809,8 +2824,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2853,8 +2867,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2897,8 +2910,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2941,8 +2953,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -2985,8 +2996,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3029,8 +3039,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3073,8 +3082,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3117,8 +3125,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3161,8 +3168,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3205,8 +3211,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3249,8 +3254,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3293,8 +3297,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3337,8 +3340,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3381,8 +3383,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3425,8 +3426,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3469,8 +3469,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3513,8 +3512,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3557,8 +3555,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3601,8 +3598,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3645,8 +3641,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3689,8 +3684,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3733,8 +3727,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3777,8 +3770,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3821,8 +3813,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3865,8 +3856,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3909,8 +3899,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3953,8 +3942,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -3997,8 +3985,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -4041,8 +4028,7 @@ $('#paginateBy').on('change', function(){
             </div>
           </div>
         </div>
-        <div style="margin-top: 12px;">
-          <a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+        <div class="product-order-btn-wrap"><a href="https://clientarea.catchontvprovider.com/cart.php" target="_blank" class="dt-sc-btn" style="padding: 7px 18px; font-size: 13px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <i class="fa fa-shopping-cart"></i> Order Now
           </a>
         </div>
@@ -5143,14 +5129,26 @@ $('#paginateBy').on('change', function(){
 
 
 
+
+
+
 <script>
+let originalProductsOrder = [];
+
 function applyFilters() {
     const selectedCat = document.querySelector('input[name="pkg_category"]:checked')?.value || 'all';
     const minInput = document.querySelector('input[name="filter.v.price.gte"]');
     const maxInput = document.querySelector('input[name="filter.v.price.lte"]');
+    const searchInput = document.getElementById('pkg-search-input');
+    const searchClearBtn = document.getElementById('search-clear-btn');
     
     let minPrice = parseFloat(minInput?.value);
     let maxPrice = parseFloat(maxInput?.value);
+    const searchQuery = (searchInput?.value || '').trim().toLowerCase();
+    
+    if (searchClearBtn) {
+        searchClearBtn.style.display = searchQuery ? 'block' : 'none';
+    }
     
     if (isNaN(minPrice)) minPrice = 0;
     if (isNaN(maxPrice)) maxPrice = 999999;
@@ -5160,16 +5158,54 @@ function applyFilters() {
     products.forEach(p => {
         const cats = p.getAttribute('data-category') || 'all';
         const price = parseFloat(p.getAttribute('data-price')) || 0;
+        const title = (p.querySelector('.grid-link__title')?.innerText || '').toLowerCase();
+        const vendor = (p.querySelector('.product-vendor')?.innerText || '').toLowerCase();
         
         const catMatch = (selectedCat === 'all' || cats.includes(selectedCat));
         const priceMatch = (price >= minPrice && price <= maxPrice);
+        const searchMatch = (!searchQuery || title.includes(searchQuery) || vendor.includes(searchQuery));
         
-        if (catMatch && priceMatch) {
+        if (catMatch && priceMatch && searchMatch) {
             p.style.display = '';
         } else {
             p.style.display = 'none';
         }
     });
+}
+
+function handleSort() {
+    const sortVal = document.getElementById('SortBy')?.value || 'featured';
+    const grid = document.querySelector('.product-collection');
+    if (!grid) return;
+    
+    const items = Array.from(grid.querySelectorAll('.grid-item'));
+    
+    if (sortVal === 'price-low-high') {
+        items.sort((a, b) => parseFloat(a.getAttribute('data-price') || 0) - parseFloat(b.getAttribute('data-price') || 0));
+    } else if (sortVal === 'price-high-low') {
+        items.sort((a, b) => parseFloat(b.getAttribute('data-price') || 0) - parseFloat(a.getAttribute('data-price') || 0));
+    } else if (sortVal === 'title-az') {
+        items.sort((a, b) => {
+            const titleA = a.querySelector('.grid-link__title')?.innerText.trim() || '';
+            const titleB = b.querySelector('.grid-link__title')?.innerText.trim() || '';
+            return titleA.localeCompare(titleB);
+        });
+    } else if (sortVal === 'title-za') {
+        items.sort((a, b) => {
+            const titleA = a.querySelector('.grid-link__title')?.innerText.trim() || '';
+            const titleB = b.querySelector('.grid-link__title')?.innerText.trim() || '';
+            return titleB.localeCompare(titleA);
+        });
+    } else {
+        // Featured (Original Order)
+        items.sort((a, b) => {
+            const idxA = originalProductsOrder.indexOf(a);
+            const idxB = originalProductsOrder.indexOf(b);
+            return idxA - idxB;
+        });
+    }
+    
+    items.forEach(item => grid.appendChild(item));
 }
 
 function clearPriceFilter() {
@@ -5182,27 +5218,82 @@ function clearPriceFilter() {
 
 function clearAllFilters() {
     clearPriceFilter();
+    const searchInput = document.getElementById('pkg-search-input');
+    if (searchInput) searchInput.value = '';
     const allRadio = document.getElementById('cat-all');
-    if (allRadio) {
-        allRadio.checked = true;
+    if (allRadio) allRadio.checked = true;
+    const sortSelect = document.getElementById('SortBy');
+    if (sortSelect) {
+        sortSelect.value = 'featured';
+        handleSort();
     }
     applyFilters();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    const grid = document.querySelector('.product-collection');
+    if (grid) {
+        originalProductsOrder = Array.from(grid.querySelectorAll('.grid-item'));
+    }
+
     // 1. Listen to category radio changes
     const radios = document.querySelectorAll('input[name="pkg_category"]');
-    radios.forEach(radio => {
-        radio.addEventListener('change', applyFilters);
-    });
+    radios.forEach(radio => radio.addEventListener('change', applyFilters));
 
-    // 2. Listen to price input keyup / changes
+    // 2. Listen to price input changes
     const minInput = document.querySelector('input[name="filter.v.price.gte"]');
     const maxInput = document.querySelector('input[name="filter.v.price.lte"]');
     if (minInput) minInput.addEventListener('input', applyFilters);
     if (maxInput) maxInput.addEventListener('input', applyFilters);
 
-    // 3. Check URL parameters if user opened via direct link or after refresh
+    // 3. Search Bar live typing & clear button
+    const searchInput = document.getElementById('pkg-search-input');
+    const searchClearBtn = document.getElementById('search-clear-btn');
+    if (searchInput) {
+        searchInput.addEventListener('input', applyFilters);
+    }
+    if (searchClearBtn) {
+        searchClearBtn.addEventListener('click', function() {
+            if (searchInput) searchInput.value = '';
+            applyFilters();
+        });
+    }
+
+    // 4. Sort dropdown change
+    const sortSelect = document.getElementById('SortBy');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', handleSort);
+    }
+
+    // 5. Grid / List View Toggle
+    const viewButtons = document.querySelectorAll('.collection-view a[data-view]');
+    viewButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            viewButtons.forEach(b => {
+                b.classList.remove('active');
+                const svg = b.querySelector('svg');
+                if (svg) svg.style.fill = '#64748b';
+            });
+            this.classList.add('active');
+            const activeSvg = this.querySelector('svg');
+            if (activeSvg) activeSvg.style.fill = '#e7422f';
+            
+            const viewMode = this.getAttribute('data-view');
+            const coll = document.querySelector('.product-collection');
+            if (coll) {
+                if (viewMode === 'list') {
+                    coll.style.display = 'flex';
+                    coll.style.flexDirection = 'column';
+                } else {
+                    coll.style.display = 'grid';
+                    coll.style.flexDirection = '';
+                }
+            }
+        });
+    });
+
+    // 6. Check URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const catParam = urlParams.get('pkg_category');
     const minParam = urlParams.get('filter.v.price.gte');
@@ -5210,14 +5301,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (catParam) {
         const targetRadio = document.querySelector(`input[name="pkg_category"][value="${catParam}"]`);
-        if (targetRadio) {
-            targetRadio.checked = true;
-        }
+        if (targetRadio) targetRadio.checked = true;
     }
     if (minParam && minInput) minInput.value = minParam;
     if (maxParam && maxInput) maxInput.value = maxParam;
 
-    // Run initial filter check
     applyFilters();
 });
 </script>
