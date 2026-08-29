@@ -4079,112 +4079,57 @@ $('#paginateBy').on('change', function(){
         
         
         <div class="dt-collection-filter" id="dt-collection-filter">   
-            <!-- Package Categories Filter -->
-            <div class="js-filter package-category-filter" style="margin-bottom: 25px; border-bottom: 1px solid #e5e7eb; padding-bottom: 20px;">
-                <div class="mobile-facets__summary">
-                    <h5 class="sidebar_title" style="margin-bottom: 15px; font-weight: 700; color: #111827;">Categories</h5>
+            <!-- Package Categories Filter (Clean Modern Pill Design) -->
+            <div class="js-filter package-category-filter" style="margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <div class="mobile-facets__summary" style="margin-bottom: 14px;">
+                    <h5 class="sidebar_title" style="margin: 0; font-weight: 700; font-size: 15px; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">Categories</h5> 
                 </div>
                 <div class="sidebar-body">
-                    <ul class="categories-list filter-package-tabs" style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item active" style="cursor: pointer; display: flex; align-items: center; font-weight: 700; color: #e7422f; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="all" checked style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>All Packages</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 12px; margin-left: auto;">(52)</span>
-                            </label>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 500; color: #4b5563; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="top-selling" style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>🔥 Top Selling Packages</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 12px; margin-left: auto;">(3)</span>
-                            </label>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 500; color: #4b5563; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="free-trial" style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>Free Trial 36 Hours</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 12px; margin-left: auto;">(1)</span>
-                            </label>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 500; color: #4b5563; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="one-month" style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>One Month Subscription Plans</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 12px; margin-left: auto;">(5)</span>
-                            </label>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 500; color: #4b5563; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="three-month" style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>Three Month Subscription Plans</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 12px; margin-left: auto;">(5)</span>
-                            </label>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 500; color: #4b5563; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="six-month" style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>Six Month Subscription Plans</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 12px; margin-left: auto;">(5)</span>
-                            </label>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 500; color: #4b5563; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="annual" style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>Annual Subscription Plans</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 12px; margin-left: auto;">(5)</span>
-                            </label>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 500; color: #4b5563; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="lifetime" style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>Lifetime Subscription Plans</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 12px; margin-left: auto;">(5)</span>
-                            </label>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 500; color: #4b5563; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="renew" style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>Renew Your IPTV Subscription</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 12px; margin-left: auto;">(20)</span>
-                            </label>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 500; color: #4b5563; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="reseller" style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>Become a Reseller</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 12px; margin-left: auto;">(4)</span>
-                            </label>
-                        </li>
-                    </ul>
+                    <div class="category-menu-list">
+                        <a href="javascript:void(0)" class="cat-pill-btn active" data-val="all">
+                            <span class="cat-name">All Packages</span>
+                            <span class="cat-num">52</span>
+                        </a>
+                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="top-selling">
+                            <span class="cat-name">🔥 Top Selling</span>
+                            <span class="cat-num">3</span>
+                        </a>
+                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="free-trial">
+                            <span class="cat-name">Free Trial 36 Hours</span>
+                            <span class="cat-num">1</span>
+                        </a>
+                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="one-month">
+                            <span class="cat-name">One Month Plans</span>
+                            <span class="cat-num">5</span>
+                        </a>
+                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="three-month">
+                            <span class="cat-name">Three Month Plans</span>
+                            <span class="cat-num">5</span>
+                        </a>
+                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="six-month">
+                            <span class="cat-name">Six Month Plans</span>
+                            <span class="cat-num">5</span>
+                        </a>
+                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="annual">
+                            <span class="cat-name">Annual Plans</span>
+                            <span class="cat-num">5</span>
+                        </a>
+                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="lifetime">
+                            <span class="cat-name">Lifetime Plans</span>
+                            <span class="cat-num">5</span>
+                        </a>
+                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="renew">
+                            <span class="cat-name">Renew Subscription</span>
+                            <span class="cat-num">20</span>
+                        </a>
+                        <a href="javascript:void(0)" class="cat-pill-btn" data-val="reseller">
+                            <span class="cat-name">Become a Reseller</span>
+                            <span class="cat-num">4</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-   
-            <!-- Package Categories Filter -->
-            <div class="js-filter package-category-filter" style="margin-bottom: 25px; border-bottom: 1px solid #e5e7eb; padding-bottom: 20px;">
-                <div class="mobile-facets__summary">
-                    <h5 class="sidebar_title" style="margin-bottom: 12px; font-weight: 700; color: #111827;">Categories</h5>
-                </div>
-                <div class="sidebar-body">
-                    <ul class="categories-list filter-package-tabs" style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 600; color: #e7422f; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="all" checked style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>All Packages</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 13px; margin-left: auto;">(3)</span>
-                            </label>
-                        </li>
-                        <li style="margin-bottom: 10px;">
-                            <label class="category-filter-item" style="cursor: pointer; display: flex; align-items: center; font-weight: 600; color: #4b5563; gap: 8px;">
-                                <input type="radio" name="pkg_category" value="top-selling" style="accent-color: #e7422f; width: 16px; height: 16px;">
-                                <span>🔥 Top Selling Packages</span>
-                                <span class="badge-count" style="color: #6b7280; font-size: 13px; margin-left: auto;">(3)</span>
-                            </label>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-   
+            
             <div class="js-filter" data-index="filter-1"> 
                 <div class="mobile-facets__summary">
                     <h5 class="sidebar_title">Availability</h5> 
@@ -5167,50 +5112,94 @@ $('#paginateBy').on('change', function(){
 
 
 </div>
+
+
+
+
+
+
+<style>
+.category-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+.cat-pill-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  line-height: 1.3;
+}
+.cat-pill-btn:hover {
+  background: #f8fafc;
+  color: #e7422f !important;
+  border-color: #cbd5e1;
+}
+.cat-pill-btn.active {
+  background: #e7422f !important;
+  color: #ffffff !important;
+  border-color: #e7422f !important;
+  font-weight: 700;
+  box-shadow: 0 4px 6px -1px rgba(231, 66, 47, 0.2);
+}
+.cat-pill-btn .cat-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 8px;
+}
+.cat-pill-btn .cat-num {
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.cat-pill-btn.active .cat-num {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+@media (min-width: 992px) {
+  #collection-template-query.left-sidebar {
+    display: flex;
+    gap: 30px;
+  }
+  #collection-template-query.left-sidebar .facets {
+    width: 260px;
+    flex: 0 0 260px;
+  }
+  #collection-template-query.left-sidebar .collection-grid {
+    flex: 1;
+    min-width: 0;
+  }
+}
+</style>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const radios = document.querySelectorAll('input[name="pkg_category"]');
+    const pillButtons = document.querySelectorAll('.cat-pill-btn');
     const products = document.querySelectorAll('.product-collection .grid-item');
 
-    radios.forEach(radio => {
-        radio.addEventListener('change', function() {
-            const val = this.value;
-            document.querySelectorAll('.category-filter-item').forEach(lbl => {
-                lbl.style.color = '#4b5563';
-            });
-            this.closest('.category-filter-item').style.color = '#e7422f';
+    pillButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const val = this.getAttribute('data-val');
 
-            products.forEach(p => {
-                const cats = p.getAttribute('data-category') || 'all';
-                if (val === 'all' || cats.includes(val)) {
-                    p.style.display = '';
-                } else {
-                    p.style.display = 'none';
-                }
-            });
-        });
-    });
-});
-</script>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const radios = document.querySelectorAll('input[name="pkg_category"]');
-    const products = document.querySelectorAll('.product-collection .grid-item');
-
-    radios.forEach(radio => {
-        radio.addEventListener('change', function() {
-            const val = this.value;
-            document.querySelectorAll('.category-filter-item').forEach(lbl => {
-                lbl.style.color = '#4b5563';
-                lbl.style.fontWeight = '500';
-            });
-            const activeLabel = this.closest('.category-filter-item');
-            if (activeLabel) {
-                activeLabel.style.color = '#e7422f';
-                activeLabel.style.fontWeight = '700';
-            }
+            pillButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
 
             products.forEach(p => {
                 const cats = p.getAttribute('data-category') || 'all';
