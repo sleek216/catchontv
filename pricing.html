@@ -466,7 +466,11 @@ for (var attr in meta) {
   <style>
 /* Button horizontal alignment in row */
 .product-collection .grid-item {
-    display: flex !important;
+    display: flex;
+}
+.product-collection .grid-item.d-none,
+.product-collection .grid-item[style*="display: none"] {
+    display: none !important;
 }
 .product-collection .grid-item .products {
     display: flex !important;
@@ -4237,29 +4241,8 @@ for (var attr in meta) {
     
   
   
-  <collection-filters-form class="facets small-hide">
-    <form id="CollectionFiltersForm" class="facets__form" onsubmit="
-    // Search input live filtering
-    const searchInput = document.getElementById('pkg-search-input');
-    const searchClearBtn = document.getElementById('search-clear-btn');
-    if (searchInput) {
-        searchInput.addEventListener('input', applyFilters);
-    }
-    if (searchClearBtn) {
-        searchClearBtn.addEventListener('click', function() {
-            if (searchInput) searchInput.value = '';
-            applyFilters();
-        });
-    }
-
-    // Sort By handler
-    const sortSelect = document.getElementById('SortBy');
-    if (sortSelect) {
-        sortSelect.addEventListener('change', handleSort);
-    }
-    
-    applyFilters();
- return false;">
+  <div class="facets small-hide">
+    <form id="CollectionFiltersForm" class="facets__form" onsubmit="return false;">
         
 
         
@@ -4275,65 +4258,65 @@ for (var attr in meta) {
                 </div>
                 <div class="widget-list widget-mb-2 filter-body d-flex">
                     <div class="sidebar-body">
-                        <ul class="categories-list filter-package-tabs" style="list-style: none; padding: 0; margin: 0;">
+                                                <ul class="categories-list filter-package-tabs" style="list-style: none; padding: 0; margin: 0;">
                             <li style="margin-bottom: 8px;">
                                 <div class="filter-custom-control" onclick="setCategory('all')" style="cursor: pointer;">
-                                    <input type="radio" name="pkg_category" value="all" id="cat-all" checked onchange="applyFilters()">
-                                    <label for="cat-all" style="cursor: pointer;">All Packages (52)</label>
+                                    <input type="radio" name="pkg_category" value="all" id="cat-all" checked>
+                                    <label for="cat-all" style="cursor: pointer; font-weight: 700; color: #e7422f;">All Packages (53)</label>
                                 </div>
                             </li>
                             <li style="margin-bottom: 8px;">
                                 <div class="filter-custom-control" onclick="setCategory('top-selling')" style="cursor: pointer;">
-                                    <input type="radio" name="pkg_category" value="top-selling" id="cat-top-selling" onchange="applyFilters()">
-                                    <label for="cat-top-selling" style="cursor: pointer;">🔥 Top Selling (3)</label>
+                                    <input type="radio" name="pkg_category" value="top-selling" id="cat-top-selling">
+                                    <label for="cat-top-selling" style="cursor: pointer; font-weight: 500;">🔥 Top Selling (3)</label>
                                 </div>
                             </li>
                             <li style="margin-bottom: 8px;">
                                 <div class="filter-custom-control" onclick="setCategory('free-trial')" style="cursor: pointer;">
-                                    <input type="radio" name="pkg_category" value="free-trial" id="cat-free-trial" onchange="applyFilters()">
-                                    <label for="cat-free-trial" style="cursor: pointer;">Free Trial 36 Hours (1)</label>
+                                    <input type="radio" name="pkg_category" value="free-trial" id="cat-free-trial">
+                                    <label for="cat-free-trial" style="cursor: pointer; font-weight: 500;">Free Trial 36 Hours (1)</label>
                                 </div>
                             </li>
                             <li style="margin-bottom: 8px;">
                                 <div class="filter-custom-control" onclick="setCategory('one-month')" style="cursor: pointer;">
-                                    <input type="radio" name="pkg_category" value="one-month" id="cat-one-month" onchange="applyFilters()">
-                                    <label for="cat-one-month" style="cursor: pointer;">1 Month Plans (5)</label>
+                                    <input type="radio" name="pkg_category" value="one-month" id="cat-one-month">
+                                    <label for="cat-one-month" style="cursor: pointer; font-weight: 500;">1 Month Plans (5)</label>
                                 </div>
                             </li>
                             <li style="margin-bottom: 8px;">
                                 <div class="filter-custom-control" onclick="setCategory('three-month')" style="cursor: pointer;">
-                                    <input type="radio" name="pkg_category" value="three-month" id="cat-three-month" onchange="applyFilters()">
-                                    <label for="cat-three-month" style="cursor: pointer;">3 Months Plans (5)</label>
+                                    <input type="radio" name="pkg_category" value="three-month" id="cat-three-month">
+                                    <label for="cat-three-month" style="cursor: pointer; font-weight: 500;">3 Months Plans (5)</label>
                                 </div>
                             </li>
                             <li style="margin-bottom: 8px;">
                                 <div class="filter-custom-control" onclick="setCategory('six-month')" style="cursor: pointer;">
-                                    <input type="radio" name="pkg_category" value="six-month" id="cat-six-month" onchange="applyFilters()">
-                                    <label for="cat-six-month" style="cursor: pointer;">6 Months Plans (5)</label>
+                                    <input type="radio" name="pkg_category" value="six-month" id="cat-six-month">
+                                    <label for="cat-six-month" style="cursor: pointer; font-weight: 500;">6 Months Plans (5)</label>
                                 </div>
                             </li>
                             <li style="margin-bottom: 8px;">
                                 <div class="filter-custom-control" onclick="setCategory('annual')" style="cursor: pointer;">
-                                    <input type="radio" name="pkg_category" value="annual" id="cat-annual" onchange="applyFilters()">
-                                    <label for="cat-annual" style="cursor: pointer;">1 Year Plans (5)</label>
+                                    <input type="radio" name="pkg_category" value="annual" id="cat-annual">
+                                    <label for="cat-annual" style="cursor: pointer; font-weight: 500;">1 Year Plans (5)</label>
                                 </div>
                             </li>
                             <li style="margin-bottom: 8px;">
                                 <div class="filter-custom-control" onclick="setCategory('lifetime')" style="cursor: pointer;">
-                                    <input type="radio" name="pkg_category" value="lifetime" id="cat-lifetime" onchange="applyFilters()">
-                                    <label for="cat-lifetime" style="cursor: pointer;">Lifetime Plans (5)</label>
+                                    <input type="radio" name="pkg_category" value="lifetime" id="cat-lifetime">
+                                    <label for="cat-lifetime" style="cursor: pointer; font-weight: 500;">Lifetime Plans (5)</label>
                                 </div>
                             </li>
                             <li style="margin-bottom: 8px;">
                                 <div class="filter-custom-control" onclick="setCategory('renew')" style="cursor: pointer;">
-                                    <input type="radio" name="pkg_category" value="renew" id="cat-renew" onchange="applyFilters()">
-                                    <label for="cat-renew" style="cursor: pointer;">Renew Subscription (20)</label>
+                                    <input type="radio" name="pkg_category" value="renew" id="cat-renew">
+                                    <label for="cat-renew" style="cursor: pointer; font-weight: 500;">Renew Subscription (20)</label>
                                 </div>
                             </li>
                             <li style="margin-bottom: 8px;">
                                 <div class="filter-custom-control" onclick="setCategory('reseller')" style="cursor: pointer;">
-                                    <input type="radio" name="pkg_category" value="reseller" id="cat-reseller" onchange="applyFilters()">
-                                    <label for="cat-reseller" style="cursor: pointer;">Become a Reseller (4)</label>
+                                    <input type="radio" name="pkg_category" value="reseller" id="cat-reseller">
+                                    <label for="cat-reseller" style="cursor: pointer; font-weight: 500;">Become a Reseller (4)</label>
                                 </div>
                             </li>
                         </ul>
@@ -4461,7 +4444,7 @@ for (var attr in meta) {
 
 
     </form>
-</collection-filters-form>
+</div>
 <style>
   /*
     .filter-action, .count-bubble {
@@ -4488,7 +4471,7 @@ for (var attr in meta) {
 </style>
 
 
-<script src="//catchontv.com/cdn/shop/t/2/assets/dt_collection_filter.js?v=10951606678138750431687266798" defer="defer"></script>
+
   
     
   
@@ -5336,19 +5319,26 @@ for (var attr in meta) {
 let originalProductsOrder = [];
 
 function setCategory(catVal) {
-    const radio = document.querySelector(`input[name="pkg_category"][value="${catVal}"]`);
+    const radio = document.querySelector('input[name="pkg_category"][value="' + catVal + '"]');
     if (radio) {
         radio.checked = true;
     }
-    // Highlight selected label
-    document.querySelectorAll('.filter-package-tabs label').forEach(lbl => {
-        lbl.style.fontWeight = '500';
-        lbl.style.color = '';
+    
+    // Highlight selected category label
+    document.querySelectorAll('.filter-package-tabs li').forEach(function(li) {
+        const r = li.querySelector('input[name="pkg_category"]');
+        const lbl = li.querySelector('label');
+        if (r && lbl) {
+            if (r.checked) {
+                lbl.style.fontWeight = '700';
+                lbl.style.color = '#e7422f';
+            } else {
+                lbl.style.fontWeight = '500';
+                lbl.style.color = '';
+            }
+        }
     });
-    if (radio && radio.nextElementSibling) {
-        radio.nextElementSibling.style.fontWeight = '700';
-        radio.nextElementSibling.style.color = '#e7422f';
-    }
+    
     applyFilters();
 }
 
@@ -5361,9 +5351,9 @@ function applyFilters() {
     const searchInput = document.getElementById('pkg-search-input');
     const searchClearBtn = document.getElementById('search-clear-btn');
     
-    let minPrice = parseFloat(minInput?.value);
-    let maxPrice = parseFloat(maxInput?.value);
-    const searchQuery = (searchInput?.value || '').trim().toLowerCase();
+    let minPrice = parseFloat(minInput ? minInput.value : '');
+    let maxPrice = parseFloat(maxInput ? maxInput.value : '');
+    const searchQuery = (searchInput ? searchInput.value : '').trim().toLowerCase();
     
     if (searchClearBtn) {
         searchClearBtn.style.display = searchQuery ? 'block' : 'none';
@@ -5375,35 +5365,48 @@ function applyFilters() {
     const products = document.querySelectorAll('.product-collection .grid-item');
     let visibleCount = 0;
     
-    products.forEach(p => {
+    products.forEach(function(p) {
         const catAttr = p.getAttribute('data-category') || 'all';
         const cats = catAttr.split(' ');
         const price = parseFloat(p.getAttribute('data-price')) || 0;
-        const title = (p.querySelector('.grid-link__title')?.innerText || '').toLowerCase();
-        const vendor = (p.querySelector('.product-vendor')?.innerText || '').toLowerCase();
+        const title = (p.querySelector('.grid-link__title') ? p.querySelector('.grid-link__title').innerText : '').toLowerCase();
+        const vendor = (p.querySelector('.product-vendor') ? p.querySelector('.product-vendor').innerText : '').toLowerCase();
         
         // Exact category matching
-        let catMatch = false;
-        if (selectedCat === 'all') {
-            catMatch = true;
-        } else {
-            catMatch = cats.includes(selectedCat);
-        }
-        
+        let catMatch = (selectedCat === 'all') ? true : cats.includes(selectedCat);
         const priceMatch = (price >= minPrice && price <= maxPrice);
         const searchMatch = (!searchQuery || title.includes(searchQuery) || vendor.includes(searchQuery));
         
         if (catMatch && priceMatch && searchMatch) {
-            p.style.display = '';
+            p.classList.remove('d-none');
+            p.style.setProperty('display', 'flex', 'important');
             visibleCount++;
         } else {
-            p.style.display = 'none';
+            p.classList.add('d-none');
+            p.style.setProperty('display', 'none', 'important');
         }
     });
+    
+    // Empty state handling
+    let emptyState = document.getElementById('empty-pkg-message');
+    const coll = document.querySelector('.product-collection');
+    if (visibleCount === 0 && coll) {
+        if (!emptyState) {
+            emptyState = document.createElement('li');
+            emptyState.id = 'empty-pkg-message';
+            emptyState.style.cssText = 'grid-column: 1/-1; width: 100%; text-align: center; padding: 50px 20px; list-style: none;';
+            emptyState.innerHTML = '<div style="background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 40px 20px; max-width: 500px; margin: 0 auto;"><i class="fa fa-search" style="font-size: 42px; color: #94a3b8; margin-bottom: 15px; display: block;"></i><h3 style="font-size: 18px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">No packages found</h3><p style="font-size: 14px; color: #64748b; margin-bottom: 20px;">Try adjusting your search query, price range, or category filter.</p><button type="button" onclick="clearAllFilters()" class="dt-sc-btn" style="background: #e7422f; color: #ffffff; padding: 10px 22px; border-radius: 6px; font-weight: 700; cursor: pointer; border: none;">Reset All Filters</button></div>';
+            coll.appendChild(emptyState);
+        } else {
+            emptyState.style.display = 'block';
+        }
+    } else if (emptyState) {
+        emptyState.style.display = 'none';
+    }
 }
 
 function handleSort() {
-    const sortVal = document.getElementById('SortBy')?.value || 'featured';
+    const sortVal = document.getElementById('SortBy') ? document.getElementById('SortBy').value : 'featured';
     const grid = document.querySelector('.product-collection');
     if (!grid) return;
     
@@ -5418,14 +5421,16 @@ function handleSort() {
     } else if (sortVal === 'price-high-low') {
         items.sort((a, b) => parseFloat(b.getAttribute('data-price') || 0) - parseFloat(a.getAttribute('data-price') || 0));
     } else if (sortVal === 'title-az') {
-        items.sort((a, b) => (a.querySelector('.grid-link__title')?.innerText || '').trim().localeCompare((b.querySelector('.grid-link__title')?.innerText || '').trim()));
+        items.sort((a, b) => (a.querySelector('.grid-link__title') ? a.querySelector('.grid-link__title').innerText : '').trim().localeCompare((b.querySelector('.grid-link__title') ? b.querySelector('.grid-link__title').innerText : '').trim()));
     } else if (sortVal === 'title-za') {
-        items.sort((a, b) => (b.querySelector('.grid-link__title')?.innerText || '').trim().localeCompare((a.querySelector('.grid-link__title')?.innerText || '').trim()));
+        items.sort((a, b) => (b.querySelector('.grid-link__title') ? b.querySelector('.grid-link__title').innerText : '').trim().localeCompare((a.querySelector('.grid-link__title') ? a.querySelector('.grid-link__title').innerText : '').trim()));
     } else {
         items.sort((a, b) => originalProductsOrder.indexOf(a) - originalProductsOrder.indexOf(b));
     }
     
-    items.forEach(item => grid.appendChild(item));
+    items.forEach(function(item) {
+        grid.appendChild(item);
+    });
 }
 
 function clearPriceFilter() {
@@ -5451,7 +5456,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 1. Listen to category radio changes
     const radios = document.querySelectorAll('input[name="pkg_category"]');
-    radios.forEach(radio => {
+    radios.forEach(function(radio) {
         radio.addEventListener('change', function() {
             setCategory(this.value);
         });
@@ -5484,10 +5489,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 5. Grid / List View Toggle
     const viewButtons = document.querySelectorAll('.collection-view a[data-view]');
-    viewButtons.forEach(btn => {
+    viewButtons.forEach(function(btn) {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            viewButtons.forEach(b => {
+            viewButtons.forEach(function(b) {
                 b.classList.remove('active');
                 const svg = b.querySelector('svg');
                 if (svg) svg.style.fill = '#64748b';
@@ -5510,11 +5515,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 6. Check URL params
+    // 6. Check URL query params (e.g. ?pkg_category=three-month or ?category=three-month)
     const urlParams = new URLSearchParams(window.location.search);
-    const catParam = urlParams.get('pkg_category');
-    const minParam = urlParams.get('filter.v.price.gte');
-    const maxParam = urlParams.get('filter.v.price.lte');
+    const catParam = urlParams.get('pkg_category') || urlParams.get('category');
+    const minParam = urlParams.get('filter.v.price.gte') || urlParams.get('min_price');
+    const maxParam = urlParams.get('filter.v.price.lte') || urlParams.get('max_price');
 
     if (catParam) {
         setCategory(catParam);
